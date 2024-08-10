@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="style.css">
-    <script src = "script.js" defer ></script>
-</head>
-<body>
-    <button type = "button" value = "Add Book" onclick="newBookForm();">New Book</button>
-    <form action="text" id="form1">
-        <div class="bookText">Author</div>
-        <div class="bookText">Title</div>
-        <div class="bookText">Number of Pages</div>
-        <div class="bookText">Read or not Read</div>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
 
-    </form>
-</body>
+<div class="container">
+
+    <button type="button" value="Add Book" onclick="newBookForm()">
+        New Book
+      </button>
+      <form action="text" id="form1" onsubmit = 'submitForm(event)'>
+        <div class="bookText">
+          Author
+          <div class="entryArea">
+            <input type="text" name="authorEntry" id="authorEntry" />
+          </div>
+        </div>
+  
+        <div class="bookText">
+          Title
+          <div class="entryArea">
+            <input type="text" name="titleEntry" id="titleEntry" />
+          </div>
+        </div>
+        <div class="bookText">
+          Number of Pages
+          <div class="entryArea">
+            <input type="text" name="pageEntry" id="pageEntry" />
+          </div>
+        </div>
+        <div class="bookText">
+          Read or not Read
+          <div class="entryArea">
+            <input type="text" name="readEntry" id="readEntry" />
+          </div>
+        </div>
+
+        <button id="submit"> Enter Book             
+        </button>
+      </form>
+
+      <div id="bookList">
+
+      </div>
+    </body>
+
+
+</div>
+
+
+
 </html>
