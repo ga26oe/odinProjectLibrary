@@ -18,7 +18,7 @@ function addBookToLibrary(book) {
 
 function displayBook() {
   const bookList = document.getElementById("bookList");
-
+  bookList.innerHTML = "";
   myLibrary.forEach((book, index) => {
     const bookElement = document.createElement("div");
     bookElement.classList.add("book"); //this adds css class to the div we created above
@@ -36,6 +36,20 @@ function displayBook() {
     bookList.appendChild(bookElement);
   });
 }
+
+function removeBook(index) {
+  myLibrary.splice(index, 1); //removes 1 element at index
+  displayBook();
+}
+
+function toggleRead(index) {
+  myLibrary[index].read = !myLibrary[index].read;
+  displayBook();
+}
+
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
 
 // button that pops up a form
 function newBookForm() {
