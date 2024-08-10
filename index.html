@@ -7,52 +7,49 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
-
-<div class="container">
-
-    <button type="button" value="Add Book" onclick="newBookForm()">
-        New Book
-      </button>
-      <form action="text" id="form1" onsubmit = 'submitForm(event)'>
-        <div class="bookText">
-          Author
-          <div class="entryArea">
-            <input type="text" name="authorEntry" id="authorEntry" />
+    <div class="container">
+      <dialog id="addBookForm">
+        <form>
+          <div class="bookText">
+            Author
+            <div class="entryArea">
+              <input type="text" name="authorEntry" id="authorEntry" />
+            </div>
           </div>
-        </div>
-  
-        <div class="bookText">
-          Title
-          <div class="entryArea">
-            <input type="text" name="titleEntry" id="titleEntry" />
+
+          <div class="bookText">
+            Title
+            <div class="entryArea">
+              <input type="text" name="titleEntry" id="titleEntry" />
+            </div>
           </div>
-        </div>
-        <div class="bookText">
-          Number of Pages
-          <div class="entryArea">
-            <input type="text" name="pageEntry" id="pageEntry" />
+          <div class="bookText">
+            Number of Pages
+            <div class="entryArea">
+              <input type="number" name="pageEntry" id="pageEntry" />
+            </div>
           </div>
-        </div>
-        <div class="bookText">
-          Read or not Read
-          <div class="entryArea">
-            <input type="text" name="readEntry" id="readEntry" />
+          <div class="bookText">
+            Read or not Read
+            <div class="entryArea">
+              <input type="checkbox" name="readEntry" id="readEntry" />
+            </div>
           </div>
-        </div>
 
-        <button id="submit"> Enter Book             
-        </button>
-      </form>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" type="submit">Confirm</button>
+          </div>
+        </form>
+      </dialog>
 
-      <div id="bookList">
+      <p>
+        <button id="showDialog">Add a book to your library</button>
+      </p>
 
-      </div>
-    </body>
-
-
-</div>
-
-
-
+      <div id="bookList"></div>
+    </div>
+  </body>
 </html>

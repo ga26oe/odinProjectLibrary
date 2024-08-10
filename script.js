@@ -5,7 +5,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-
   this.getBookInfo = function () {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${
       this.read ? "already read" : "not read yet"
@@ -51,17 +50,21 @@ Book.prototype.toggleRead = function () {
   this.read = !this.read;
 };
 
-// button that pops up a form
-function newBookForm() {
-  document.getElementById("form1").style.display = "block";
-}
+const showButton = document.getElementById("showDialog");
+const addBookForm = document.getElementById("addBookForm");
+const confirmBtn = addBookForm.querySelector("#confirmBtn");
 
-// submit button
+// "Show the dialog" button opens the <dialog> modally
+showButton.addEventListener("click", () => {
+  addBookForm.showModal();
+  console.log("showing modal");
+});
 
-function submitForm(event) {
+// "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event.
+
+addBookForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const form = document.getElementById("form1");
+  const form = event.target;
   const formData = new FormData(form);
 
   const author = formData.get("authorEntry");
@@ -73,6 +76,6 @@ function submitForm(event) {
 
   addBookToLibrary(newBook);
   displayBook();
-}
-
-console.table(myLibrary);
+  addBookForm.close();
+  form.reset();
+});
