@@ -38,6 +38,7 @@ h6 {
 
 :root {
   --backgroundColor: #23262e;
+  --sidebarColor: #fff8dc;
   --textColor: #ffffff;
   --ratio: 3.74;
   --leading: 0.025em;
@@ -47,17 +48,24 @@ body {
   color: var(--textColor);
 }
 
-main {
+/* main {
   width: 700px;
   max-width: 100vw;
   margin: 0 auto;
   padding: 0 2rem;
-}
+} */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 300px 1fr 250px;
+  grid-template-rows: auto 1fr;
+  min-width: 100vh;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1; /* -1 makes sure it spans whole vertical screen */
+  background-color: var(--sidebarColor);
+  padding: 20px;
 }
 
 #showDialog {
@@ -81,7 +89,8 @@ dialog {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
+/* 
 #form1 {
   display: none;
 }
+ */
