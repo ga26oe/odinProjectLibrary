@@ -53,11 +53,17 @@ Book.prototype.toggleRead = function () {
 const showButton = document.getElementById("showDialog");
 const addBookForm = document.getElementById("addBookForm");
 const confirmBtn = addBookForm.querySelector("#confirmBtn");
+const cancelBtn = addBookForm.querySelector("#cancelBtn");
 
 // "Show the dialog" button opens the <dialog> modally
 showButton.addEventListener("click", () => {
   addBookForm.showModal();
   console.log("showing modal");
+});
+
+cancelBtn.addEventListener("click", () => {
+  addBookForm.close();
+  addBookForm.querySelector("form").reset();
 });
 
 // "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event.

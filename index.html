@@ -9,47 +9,51 @@
   </head>
 
   <body>
-    <div class="container">
-      <dialog id="addBookForm">
-        <form>
-          <div class="bookText">
-            Author
-            <div class="entryArea">
-              <input type="text" name="authorEntry" id="authorEntry" />
-            </div>
-          </div>
+    <main>
+      <div class="container">
+        <h1 class="h1">Your Own Personal Library</h1>
 
-          <div class="bookText">
-            Title
-            <div class="entryArea">
-              <input type="text" name="titleEntry" id="titleEntry" />
+        <dialog id="addBookForm">
+          <form>
+            <div class="bookText">
+              Author
+              <div class="entryArea">
+                <input type="text" name="authorEntry" id="authorEntry" />
+              </div>
             </div>
-          </div>
-          <div class="bookText">
-            Number of Pages
-            <div class="entryArea">
-              <input type="number" name="pageEntry" id="pageEntry" />
+
+            <div class="bookText">
+              Title
+              <div class="entryArea">
+                <input type="text" name="titleEntry" id="titleEntry" />
+              </div>
             </div>
-          </div>
-          <div class="bookText">
-            Read or not Read
-            <div class="entryArea">
-              <input type="checkbox" name="readEntry" id="readEntry" />
+            <div class="bookText">
+              Number of Pages
+              <div class="entryArea">
+                <input type="number" name="pageEntry" id="pageEntry" />
+              </div>
             </div>
-          </div>
+            <div class="bookText">
+              Read or not Read
+              <div class="entryArea">
+                <input type="checkbox" name="readEntry" id="readEntry" />
+              </div>
+            </div>
 
-          <div>
-            <button value="cancel" formmethod="dialog">Cancel</button>
-            <button id="confirmBtn" type="submit">Confirm</button>
-          </div>
-        </form>
-      </dialog>
+            <div>
+              <button id="cancelBtn" formmethod="dialog">Cancel</button>
+              <button id="confirmBtn" type="submit">Confirm</button>
+            </div>
+          </form>
+        </dialog>
 
-      <p>
-        <button id="showDialog">Add a book to your library</button>
-      </p>
+        <p>
+          <button id="showDialog">Add a book to your library</button>
+        </p>
 
-      <div id="bookList"></div>
-    </div>
+        <div id="bookList"></div>
+      </div>
+    </main>
   </body>
 </html>
