@@ -24,12 +24,18 @@ function displayBook() {
     bookElement.setAttribute("data-index", index);
 
     bookElement.innerHTML = `
-    <h3>${book.title}</h3>
-    <p>Author: ${book.author}</p>
-    <p>Pages: ${book.pages}</p>
-    <p>Read: ${book.read ? "Yes" : "No"}</p>
-    <button onclick="removeBook(${index})">Remove</button>
-    <button onclick="toggleRead(${index})">Toggle Read</button>
+
+    <details>
+      <summary> Book Info </summary>
+        <h3>${book.title}</h3>
+        <p>Author: ${book.author}</p>
+        <p>Pages: ${book.pages}</p>
+        <p>Read: ${book.read ? "Yes" : "No"}</p>
+        <button onclick="removeBook(${index})">Remove</button>
+        <button onclick="toggleRead(${index})">Toggle Read</button>
+
+    </details>
+
   `;
 
     bookList.appendChild(bookElement);
@@ -58,7 +64,6 @@ const cancelBtn = addBookForm.querySelector("#cancelBtn");
 // "Show the dialog" button opens the <dialog> modally
 showButton.addEventListener("click", () => {
   addBookForm.showModal();
-  console.log("showing modal");
 });
 
 cancelBtn.addEventListener("click", () => {
