@@ -41,7 +41,8 @@ h6 {
   --sidebarColor: #fff8dc;
   --mainColor: #203a4d;
   --darkTextColor: #8b4513;
-  --whiteTextColor: ##d3d3d3;
+  --svgIconColor: #8b4513;
+  --whiteTextColor: #d3d3d3;
   --ratio: 3.74;
   --leading: 0.025em;
 }
@@ -80,6 +81,14 @@ body {
 
 .addBook {
   background-color: var(--mainColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.buttonContainer {
+  padding: 2rem;
 }
 
 #bookList {
@@ -87,17 +96,17 @@ body {
 }
 
 .buttonContainer {
-  margin-top: 2rem;
+  margin-top: 30rem;
 }
 
 #showDialog {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   position: relative;
   letter-spacing: calc(3 * var(--leading, 0.025em));
   border: 0.1875em solid;
-  padding: 1em;
-  color: rebeccapurple;
+  padding: 0.8em;
+  color: var(--whiteTextColor);
   background: transparent;
   border-radius: 0.5rem;
   transition: background 0.3s, color 0.3s;
@@ -109,10 +118,10 @@ body {
 
 #showDialog:hover,
 #showDialog:focus {
-  background-color: rgba(107, 70, 193, 0.1);
+  background-color: var(--svgIconColor);
   color: white;
-  background: rebeccapurple;
-  border-color: rebeccapurple;
+  background: var(--svgIconColor);
+  border-color: var(--svgIconColor);
 }
 
 #showDialog:active {
@@ -128,7 +137,6 @@ body {
 
 .svg-icon path,
 .svg-icon polygon {
-  fill: currentColor;
   transition: fill 0.3s;
 }
 
