@@ -77,6 +77,9 @@ body {
   background-color: var(--mainColor);
   min-height: 100vh;
   color: var(--whiteTextColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .addBook {
