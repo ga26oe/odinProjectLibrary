@@ -294,7 +294,7 @@ function generateLine(itemsPerLine) {
   let line = [];
   for (let i = 0; i < itemsPerLine; i++) {
     if (Math.random() < 0.1) {
-      const quote = [Math.floor(Math.random() * quotes.length)];
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
       line.push(`<span class = "quote">"${quote}"</span>`);
     } else {
       line.push(
@@ -312,8 +312,8 @@ function generateLine(itemsPerLine) {
 
 function generateContent() {
   let content = [];
-  const lines = 5;
-  const itemsPerLine = 7;
+  const lines = 8;
+  const itemsPerLine = 5;
 
   for (let i = 0; i < lines; i++) {
     content.push(generateLine(itemsPerLine));
