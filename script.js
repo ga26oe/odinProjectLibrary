@@ -91,6 +91,30 @@ addBookForm.addEventListener("submit", (event) => {
   form.reset();
 });
 
+//disable checkbox function
+
+const readCheckbox = document.getElementById("readEntry1");
+const notReadCheckbox = document.getElementById("notReadEntry");
+
+function handleCheckboxChange(checkedBox, uncheckedBox) {
+  if (checkedBox.checked) {
+    uncheckedBox.checked = false;
+    uncheckedBox.disabled = true;
+  } else {
+    uncheckedBox.disabled = false;
+  }
+}
+
+readCheckbox.addEventListener("change", () =>
+  handleCheckboxChange(readCheckbox, notReadCheckbox)
+);
+notReadCheckbox.addEventListener("change", () =>
+  handleCheckboxChange(notReadCheckbox, readCheckbox)
+);
+
+handleCheckboxChange(readCheckbox, notReadCheckbox);
+handleCheckboxChange(notReadCheckbox, readCheckbox);
+
 // random book and quote overlay function
 
 // Array of famous books and quotes

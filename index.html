@@ -74,29 +74,55 @@
             <div class="addBook">
               <dialog id="addBookForm">
                 <form>
-                  <div class="bookText">
-                    Title
-                    <div class="entryArea">
-                      <input type="text" name="titleEntry" id="titleEntry" />
-                    </div>
+                  <div class="entryArea">
+                    <input
+                      type="text"
+                      name="titleEntry"
+                      id="titleEntry"
+                      placeholder=""
+                      required
+                    />
+                    <div class="bookText">Title</div>
                   </div>
-                  <div class="bookText">
-                    Author
-                    <div class="entryArea">
-                      <input type="text" name="authorEntry" id="authorEntry" />
-                    </div>
+                  <div class="entryArea">
+                    <input
+                      type="text"
+                      name="authorEntry"
+                      id="authorEntry"
+                      placeholder=""
+                      required
+                    />
+                    <div class="bookText">Author</div>
                   </div>
 
-                  <div class="bookText">
-                    Number of Pages
-                    <div class="entryArea">
-                      <input type="number" name="pageEntry" id="pageEntry" />
-                    </div>
+                  <div class="entryArea">
+                    <input
+                      type="text"
+                      name="authorEntry"
+                      id="authorEntry"
+                      placeholder=""
+                      required
+                    />
+                    <div class="bookText">Number of Pages</div>
                   </div>
-                  <div class="bookText">
-                    Read or not Read
-                    <div class="entryArea">
-                      <input type="checkbox" name="readEntry" id="readEntry" />
+
+                  <div class="checkBox">
+                    <div class="checkBoxContainer">
+                      <input
+                        type="checkBox"
+                        name="readEntry"
+                        id="readEntry1"
+                        value="read"
+                      />
+                      <label for="readEntry">Read</label>
+
+                      <input
+                        type="checkbox"
+                        name="readEntry"
+                        id="notReadEntry"
+                        value="notRead"
+                      />
+                      <label for="notReadEntry">Not Read</label>
                     </div>
                   </div>
 
