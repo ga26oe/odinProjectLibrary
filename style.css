@@ -36,6 +36,18 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* Hides arrows from the number input text field in chrome and firefox (39-51)*/
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 :root {
   --backgroundColor: #23262e;
   --sidebarColor: #fff8dc;
@@ -46,6 +58,9 @@ h6 {
   --ratio: 3.74;
   --leading: 0.025em;
   --bookColor: #ff4500;
+  --colorError: #dc143c;
+  --colorValid: #00ff00;
+  --formColor: #00bfff;
 }
 
 body {
@@ -254,7 +269,7 @@ dialog form {
 
 .entryArea input {
   width: 100%;
-  outline: none;
+  outline: 3px solid hsl(203, 30%, 26%);
   padding: 10px;
   line-height: 1.5;
   border-radius: 0.25rem;
@@ -353,6 +368,14 @@ input:valid + .bookText {
   z-index: 1111;
 }
 
+input:user-valid {
+  color: var(--bookColor);
+}
+
+input:user-invalid {
+  color: var(--formColor);
+}
+
 .checkBoxContainer input[type="checkbox"]:disabled + label {
   opacity: 0.5;
   cursor: not-allowed;
@@ -379,6 +402,26 @@ dialog form button {
 #cancelBtn:hover,
 #confirmBtn:hover {
   opacity: 0.8;
+}
+
+summary {
+  cursor: pointer;
+}
+
+.bookButtonRemove,
+.bookButtonToggle {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.bookButtonRemove {
+  color: var(--colorError);
+}
+.bookButtonToggle {
+  color: var(--formColor);
 }
 
 @keyframes slideIn {
